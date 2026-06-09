@@ -12,7 +12,7 @@ if image is None:
     raise FileNotFoundError("Image not found")
 image = image.astype(np.float32)
 
-def add_gaussian_noise(image, noise_percent):
+def add_gaussian_noise(image, noise_percent): ## noise_percent is the percentage of the signal's RMS to be used as noise standard deviation.
     print(f"Adding Gaussian noise: {noise_percent}%")
     signal_rms = np.sqrt(np.mean(image**2))
 

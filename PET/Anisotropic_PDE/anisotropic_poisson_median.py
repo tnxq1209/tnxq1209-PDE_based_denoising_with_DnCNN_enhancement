@@ -11,7 +11,7 @@ if image is None:
     raise FileNotFoundError("Image not found")
 image = image.astype(np.float32)
 image_norm = image / image.max()
-peak = 50
+peak = 50 ## Noise level for Poisson distribution, adjust as needed.
 noisy = np.random.poisson(
     image_norm * peak
 ).astype(np.float32) / peak
