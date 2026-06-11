@@ -1,0 +1,28 @@
+cat > .gitignore << 'EOF'
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Data
+Noise_Model/Images/
+Noise_Model/INPUT_CT/
+Noise_Model/Noisy_Images/
+
+# Generated outputs
+OUTPUT/
+
+# Model weights
+Noise_Model/weights/*.pth
+Noise_Model/weights/*.pt
+weights/*.pth
+weights/*.pt
+
+# IDE
+.idea/
+EOF
