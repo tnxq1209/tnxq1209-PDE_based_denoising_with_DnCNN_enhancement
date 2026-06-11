@@ -6,7 +6,8 @@ from metrics import calculate_metrics
 from Gaussian import gaussian_filter
 from nlm import nlm_filter
 from bm3d import bm3d_filter
-from x import proposed_filter
+from Anisotropic_function import anisotropic_diffusion
+from proposed_filter import filter_name
 
 from noise import add_poisson_gaussian_noise
 from image_loader import load_image
@@ -29,7 +30,7 @@ for noise_percent in noise_levels:
         "Gaussian": gaussian_filter(noisy),
         "NLM": nlm_filter(noisy),
         "BM3D": bm3d_filter(noisy),
-        "Proposed": proposed_filter(noisy)
+        "Proposed": anisotropic_diffusion(noisy)
     }
 
     for name, output in filters.items():
